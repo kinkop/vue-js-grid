@@ -488,15 +488,11 @@
                     windowWidth: 0
                 };
             },
-            created: function() {
-                window.addEventListener("resize", this.getWindowSize), this.getWindowSize();
-            },
+            created: function() {},
             mounted: function() {
                 this.getWindowSize();
             },
-            beforeDestroy: function() {
-                window.removeEventListener("resize", this.getWindowSize);
-            },
+            beforeDestroy: function() {},
             methods: {
                 getWindowSize: function() {
                     this.$el && (this.windowHeight = this.$el.clientHeight, this.windowWidth = this.$el.clientWidth);

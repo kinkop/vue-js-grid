@@ -6,14 +6,14 @@ export default {
     }
   },
   created () {
-    window.addEventListener('resize', this.getWindowSize)
-    this.getWindowSize()
+    // window.addEventListener('resize', this.getWindowSize)
+    // this.getWindowSize()
   },
   mounted () {
     this.getWindowSize()
   },
   beforeDestroy () {
-    window.removeEventListener('resize', this.getWindowSize)
+    // window.removeEventListener('resize', this.getWindowSize)
   },
 
   methods: {
