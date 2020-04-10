@@ -89,6 +89,7 @@ export default {
   },
   computed: {
     gridResponsiveWidth () {
+      return 1100
       if (this.gridWidth < 0) {
         return this.windowWidth
       } else {

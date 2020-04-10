@@ -247,7 +247,7 @@
             },
             computed: {
                 gridResponsiveWidth: function() {
-                    return this.gridWidth < 0 ? this.windowWidth : Math.min(this.windowWidth, this.gridWidth);
+                    return 1100;
                 },
                 height: function() {
                     return Math.ceil(this.list.length / this.rowCount) * this.cellHeight;
@@ -546,7 +546,7 @@
                             _vm.removeItem(v);
                         }
                     }) ], 2);
-                }));
+                }), 1);
             },
             staticRenderFns: []
         };
