@@ -247,7 +247,7 @@
             },
             computed: {
                 gridResponsiveWidth: function() {
-                    return this.gridWidth < 0 ? this.windowWidth : Math.min(this.windowWidth, 1100);
+                    return this.gridWidth < 0 ? this.windowWidth : this.gridWidth;
                 },
                 height: function() {
                     return Math.ceil(this.list.length / this.rowCount) * this.cellHeight;

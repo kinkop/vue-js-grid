@@ -92,7 +92,7 @@ export default {
       if (this.gridWidth < 0) {
         return this.windowWidth
       } else {
-        return Math.min(this.windowWidth, 1100)
+        return this.gridWidth
       }
     },
 
