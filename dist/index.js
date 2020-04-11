@@ -230,20 +230,14 @@
                     list: []
                 };
             },
-            watch: {
-                items: {
-                    handler: function() {
-                        var nextItems = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [];
-                        this.list = nextItems.map(function(item, index) {
-                            return {
-                                item: item,
-                                index: index,
-                                sort: index
-                            };
-                        });
-                    },
-                    immediate: !1
-                }
+            mounted: function() {
+                this.list = this.items.map(function(item, index) {
+                    return {
+                        item: item,
+                        index: index,
+                        sort: index
+                    };
+                });
             },
             computed: {
                 gridResponsiveWidth: function() {
