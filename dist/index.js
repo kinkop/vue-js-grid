@@ -175,25 +175,14 @@
         }
         Object.defineProperty(exports, "__esModule", {
             value: !0
-        }), exports.sort = void 0;
+        });
         var _extends = Object.assign || function(target) {
             for (var i = 1; i < arguments.length; i++) {
                 var source = arguments[i];
                 for (var key in source) Object.prototype.hasOwnProperty.call(source, key) && (target[key] = source[key]);
             }
             return target;
-        }, _window_size = __webpack_require__(7), _window_size2 = _interopRequireDefault(_window_size), _GridItem = __webpack_require__(10), _GridItem2 = _interopRequireDefault(_GridItem), compareValues = function(key) {
-            var order = arguments.length > 1 && void 0 !== arguments[1] ? arguments[1] : "asc";
-            return function(a, b) {
-                if (!a.hasOwnProperty(key) || !b.hasOwnProperty(key)) return 0;
-                var varA = "string" == typeof a[key] ? a[key].toUpperCase() : a[key], varB = "string" == typeof b[key] ? b[key].toUpperCase() : b[key], comparison = 0;
-                return varA > varB ? comparison = 1 : varA < varB && (comparison = -1), "desc" === order ? -1 * comparison : comparison;
-            };
-        };
-        exports.sort = function(array, sortColumn) {
-            var order = arguments.length > 2 && void 0 !== arguments[2] ? arguments[2] : "asc";
-            return array.sort(compareValues(sortColumn, order));
-        };
+        }, _window_size = __webpack_require__(7), _window_size2 = _interopRequireDefault(_window_size), _GridItem = __webpack_require__(10), _GridItem2 = _interopRequireDefault(_GridItem);
         exports.default = {
             name: "Grid",
             mixins: [ _window_size2.default ],
@@ -245,7 +234,6 @@
                 items: {
                     handler: function() {
                         var nextItems = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [];
-                        console.log(JSON.parse(JSON.stringify(nextItems))), console.log(JSON.parse(JSON.stringify(this.list))), 
                         this.list = nextItems.map(function(item, index) {
                             return {
                                 item: item,
@@ -337,7 +325,7 @@
                         }) : targetItemSort < gridPosition && sort >= targetItemSort && sort <= gridPosition ? _extends({}, item, {
                             sort: sort - 1
                         }) : item;
-                    }), this.list.sort(compareValues("sort")), this.$emit("sort", this.wrapEvent()));
+                    }), this.$emit("sort", this.wrapEvent()));
                 }
             }
         };
