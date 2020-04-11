@@ -172,9 +172,6 @@ export default {
 
     onDragEnd (event) {
       this.$emit('dragend', this.wrapEvent(event))
-      if (this.sortable) {
-        this.sortList(event.index, event.gridPosition)
-      }
     },
 
     click (event) {
