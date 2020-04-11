@@ -230,14 +230,21 @@
                     list: []
                 };
             },
-            mounted: function() {
-                this.list = this.items.map(function(item, index) {
-                    return {
-                        item: item,
-                        index: index,
-                        sort: index
-                    };
-                });
+            watch: {
+                items: {
+                    handler: function() {
+                        var nextItems = arguments.length > 0 && void 0 !== arguments[0] ? arguments[0] : [];
+                        console.log(JSON.parse(JSON.stringify(nextItems))), console.log(JSON.parse(JSON.stringify(this.list))), 
+                        this.list = nextItems.map(function(item, index) {
+                            return {
+                                item: item,
+                                index: index,
+                                sort: index
+                            };
+                        });
+                    },
+                    immediate: !0
+                }
             },
             computed: {
                 gridResponsiveWidth: function() {

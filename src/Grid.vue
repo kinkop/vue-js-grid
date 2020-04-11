@@ -73,29 +73,22 @@ export default {
       list: []
     }
   },
-  mounted() {
-    this.list = this.items.map((item, index) => {
-      return {
-        item,
-        index: index,
-        sort: index
-      }
-    })
+  watch: {
+    items: {
+      handler: function (nextItems = []) {
+        console.log(JSON.parse(JSON.stringify(nextItems)))
+        console.log(JSON.parse(JSON.stringify(this.list)))
+        this.list = nextItems.map((item, index) => {
+          return {
+            item,
+            index: index,
+            sort: index
+          }
+        })
+      },
+      immediate: true
+    }
   },
-  // watch: {
-  //   items: {
-  //     handler: function (nextItems = [], prevItems = []) {
-  //       this.list = nextItems.map((item, index) => {
-  //         return {
-  //           item,
-  //           index: index,
-  //           sort: index
-  //         }
-  //       })
-  //     },
-  //     immediate: true
-  //   }
-  // },
   computed: {
     gridResponsiveWidth () {
       if (this.gridWidth < 0) {
