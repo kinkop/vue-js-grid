@@ -301,7 +301,7 @@
                     this.$emit("dragstart", this.wrapEvent(event));
                 },
                 onDragEnd: function(event) {
-                    this.$emit("dragend", this.wrapEvent(event));
+                    this.$emit("dragend", this.wrapEvent(event)), this.sortable && this.sortList(event.index, event.gridPosition);
                 },
                 click: function(event) {
                     this.$emit("click", this.wrapEvent(event));
