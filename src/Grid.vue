@@ -84,7 +84,7 @@ export default {
           }
         })
       },
-      immediate: true
+      immediate: false
     }
   },
   computed: {
