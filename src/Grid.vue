@@ -80,7 +80,7 @@ export default {
           return {
             item,
             index: index,
-            sort: item.sort || index
+            sort: index
           }
         })
       },

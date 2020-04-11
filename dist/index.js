@@ -238,7 +238,7 @@
                             return {
                                 item: item,
                                 index: index,
-                                sort: item.sort || index
+                                sort: index
                             };
                         });
                     },
